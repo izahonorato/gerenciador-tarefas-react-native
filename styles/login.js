@@ -1,6 +1,7 @@
 import { StyleSheet} from 'react-native';
 import colors from '../constants/Colors';
 import layout from '../constants/Layout';
+import {RFValue} from 'react-native-responsive-fontsize';
 
 export default StyleSheet.create({
  
@@ -10,52 +11,55 @@ export default StyleSheet.create({
 
     },
     logo: {
-        marginBottom: 30,
-        width: layout.window.width * 0.6,
+        marginBottom: RFValue(30),
+        width: RFValue(196),
         resizeMode: 'contain'
         
     },
     inputView: {
-        padding: 10
+        padding: RFValue(10)
     },
     icone:{
-        marginTop: -18,
-        marginRight: 10,
-        width: 20,
+        marginTop: RFValue(-18),
+        marginRight: RFValue(10),
+        width: RFValue(20),
         resizeMode: 'contain'
     },
     input: {
-        marginBottom: 12,
-        fontSize: 16,
+        fontFamily: 'biennale-regular',
+        marginBottom: RFValue(12),
+        fontSize: RFValue(16),
         display: 'flex',
         alignItems: 'center',
-        letterSpacing: 0.01,
+        letterSpacing: RFValue(0.01),
         color: colors.primaryColor,
-        width: 240,
-        borderRadius: 0,
-        paddingBottom: 7,
+        width: RFValue(240),
+        borderRadius: RFValue(0),
+        paddingBottom: RFValue(7),
 
-        borderTopWidth: 0,
-        borderLeftWidth: 0,
-        borderRightWidth: 0,
+        borderTopWidth: RFValue(0),
+        borderLeftWidth: RFValue(0),
+        borderRightWidth: RFValue(0),
         borderColor: colors.mediumGreyColor,
-        borderBottomWidth: 1
+        borderBottomWidth: RFValue(1)
 
     },
     button: {
-        marginTop:12,
-        width: 272,
-        height: 56,
+        marginTop: RFValue(12),
+        width: RFValue(272),
+        height: RFValue(56),
         backgroundColor: colors.primaryColor,
         borderColor: colors.primaryColor,
-        borderRadius: 12,
+        borderRadius: RFValue(12),
         alignItems: 'center',
         justifyContent: 'center'
     },
     buttonText: {
         color: '#FFF',
-        fontSize: 17,
+        fontSize: RFValue(17),
         fontFamily: 'biennale-regular',
         fontWeight: 'bold'
     }
+
+    
 });
