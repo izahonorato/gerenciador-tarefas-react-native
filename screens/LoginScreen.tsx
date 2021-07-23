@@ -3,6 +3,7 @@ import {useNavigation} from '@react-navigation/native';
 import { useState } from 'react';
 import { View, Text, Image, TextInput, TouchableOpacity, ActivityIndicator } from 'react-native';
 import {loginStyles, defaultStyles} from '../styles/styles';
+import { executaRequisicao } from '../services/api';
 
 export const LoginScreen = () => {
 
@@ -32,7 +33,7 @@ export const LoginScreen = () => {
                 senha: password
             };
 
-            //const resultado = await executaRequisicao('login', 'POST', body);
+            const resultado = await executaRequisicao('login', 'POST', body);
             // if(resultado?.data?.token)
             // {
             //     localStorage.setItem('accessToken', resultado.data.token);
