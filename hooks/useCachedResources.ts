@@ -2,9 +2,13 @@ import { Ionicons } from '@expo/vector-icons';
 import * as Font from 'expo-font';
 import * as SplashScreen from 'expo-splash-screen';
 import * as React from 'react';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+
 
 export default function useCachedResources() {
   const [isLoadingComplete, setLoadingComplete] = React.useState(false);
+  const [accessToken, setAccessToken] = React.useState<String | null>('');
+
 
   // Load any resources or data that we need prior to rendering the app
   React.useEffect(() => {
@@ -19,6 +23,11 @@ export default function useCachedResources() {
           'biennale-regular': require('../assets/fonts/Biennale-Regular.otf')
 
         });
+
+        const token = await AsyncStorage.getItem('accessToken');
+        setAccessToken(token);
+
+         
       } catch (e) {
         // We might want to provide this error information to an error reporting service
         console.warn(e);
@@ -31,5 +40,5 @@ export default function useCachedResources() {
     loadResourcesAndDataAsync();
   }, []);
 
-  return isLoadingComplete;
+  return { isLoadingComplete, accessToken };
 }

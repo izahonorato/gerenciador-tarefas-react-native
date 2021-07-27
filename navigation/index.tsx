@@ -12,13 +12,13 @@ import { RootStackParamList } from '../types';
 
 import {LoginScreen} from '../screens/LoginScreen';
 import {HomeScreen} from '../screens/HomeScreen';
-import AsyncStorage from '@react-native-async-storage/async-storage';
 
-export default function Navigation() {
+
+export default function Navigation(props: any) {
   return (
     <NavigationContainer
      >
-      <RootNavigator />
+      <RootNavigator accessToken={props.accessToken}/>
     </NavigationContainer>
   );
 }
@@ -27,12 +27,10 @@ export default function Navigation() {
 // Read more here: https://reactnavigation.org/docs/modal
 const Stack = createStackNavigator<RootStackParamList>();
 
-function RootNavigator() {
-
-  const accessToken =  AsyncStorage.getItem('accessToken');
+function RootNavigator(props: any) {
 
   return (
-    <Stack.Navigator screenOptions={{ headerShown: false }} initialRouteName={accessToken ? "Home" : "Login"}>
+    <Stack.Navigator screenOptions={{ headerShown: false }} initialRouteName={props.accessToken !== '' && props.accessToken !== null ? "Home" : "Login"}>
       <Stack.Screen name="Login" component={LoginScreen} />
       <Stack.Screen name="Home" component={HomeScreen} />
       
