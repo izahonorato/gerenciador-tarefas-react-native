@@ -1,15 +1,17 @@
 import React from 'react';
-import { View, Text, TouchableOpacity} from 'react-native';
+import { SafeAreaView} from 'react-native';
 import { defaultStyles } from '../styles/styles';
 import { Header } from '../components/Header';
+import {Filtros} from '../components/Filtros';
 
 export const HomeScreen = () => {
 
 
     return(
-        <View style={[defaultStyles.container, defaultStyles.containerTop]}>
-               <Header/>           
-        </View>
+        <SafeAreaView style={[defaultStyles.container, defaultStyles.containerTop]}>
+               <Header/>
+               <Filtros/>           
+        </SafeAreaView>
     );
 }
 
