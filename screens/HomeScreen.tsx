@@ -1,10 +1,10 @@
 import React, { useEffect } from 'react';
 import { SafeAreaView } from 'react-native';
 import { defaultStyles } from '../styles/styles';
-import { Header } from '../componentes/Header';
-import { Filtros } from '../componentes/Filtros';
-import { Lista } from '../componentes/Lista';
-import { Footer } from '../componentes/Footer';
+import { Header } from '../components/Header';
+import { Filtros } from '../components/Filtros';
+import { Lista } from '../components/Lista';
+import { Footer } from '../components/Footer';
 import { useState } from 'react';
 import { executaRequisicao } from '../services/api';
 import moment from 'moment';
