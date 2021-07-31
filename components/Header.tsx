@@ -10,11 +10,11 @@ export const Header = () => {
 
     const [primeiroNome, setPrimeiroNome] = useState('');
 
-    const getNome = async () =>{
+    const getNome = async () => {
         const usuarioNome = await AsyncStorage.getItem('usuarioNome');
-        if(usuarioNome){
+        if (usuarioNome) {
             const first = usuarioNome?.split(' ')[0] || '';
-            setPrimeiroNome(first); 
+            setPrimeiroNome(first);
         }
     }
 
@@ -22,17 +22,16 @@ export const Header = () => {
         getNome();
     }, []);
 
-    const navigation = useNavigation();
 
-    const efetuarLogout = async() =>{
+    const navigation = useNavigation();
+    const efetuarLogout = async () => {
         await AsyncStorage.removeItem("accessToken");
         await AsyncStorage.removeItem("usuarioNome");
         await AsyncStorage.removeItem("usuarioEmail");
         navigation.navigate("Login");
-
     }
 
-    return(
+    return (
         <View style={headerStyles.container}>
             <Image style={headerStyles.logo} source={require('../assets/images/logo.png')} />
             <View style={headerStyles.viewSair}>
@@ -41,7 +40,6 @@ export const Header = () => {
                     <Image style={headerStyles.sair} source={require('../assets/images/sair.png')} />
                 </TouchableOpacity>
             </View>
-                 
         </View>
     );
 }
