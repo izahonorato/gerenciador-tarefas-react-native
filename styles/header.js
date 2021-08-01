@@ -1,11 +1,9 @@
-import { StyleSheet} from 'react-native';
+import { StyleSheet } from 'react-native';
 import colors from '../constants/Colors';
-import {RFValue} from 'react-native-responsive-fontsize';
-import Layout from '../constants/Layout';
-
+import layout from '../constants/Layout';
+import { RFValue } from "react-native-responsive-fontsize";
 
 export default StyleSheet.create({
-
     container: {
         flexDirection: "row",
         width: layout.window.width,
@@ -16,19 +14,17 @@ export default StyleSheet.create({
         paddingTop: RFValue(40),
         paddingBottom: RFValue(12)
     },
-
-    logo: {
-        marginLeft: RFValue(16),
-        width: RFValue(120),
-        resizeMode: 'contain'
-        
-    },
     viewSair: {
         flexDirection: 'row',
         justifyContent: 'center',
         alignItems: 'center'
     },
-    sair:{
+    logo: {
+        marginLeft: RFValue(16),
+        width: RFValue(120),
+        resizeMode: 'contain'
+    },
+    sair: {
         marginRight: RFValue(16),
         width: RFValue(30),
         height: RFValue(30)
@@ -39,5 +35,4 @@ export default StyleSheet.create({
         marginRight: RFValue(10),
         fontWeight: "bold"
     }
-
 });
